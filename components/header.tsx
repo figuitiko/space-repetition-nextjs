@@ -1,19 +1,20 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X, User, Settings } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Menu, X, User, Settings } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
+import { SignOutButton } from "@clerk/nextjs";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="bg-white border-b border-gray-200">
@@ -21,13 +22,18 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-robins-600">JSRepeat</span>
+              <span className="text-2xl font-bold text-robins-600">
+                JSRepeat
+              </span>
             </Link>
           </div>
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center space-x-4">
-            <Link href="/" className="text-gray-700 hover:text-robins-600 px-3 py-2 rounded-md text-sm font-medium">
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-robins-600 px-3 py-2 rounded-md text-sm font-medium"
+            >
               Dashboard
             </Link>
             <Link
@@ -66,7 +72,9 @@ export function Header() {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Log out</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <SignOutButton />
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -78,7 +86,11 @@ export function Header() {
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-robins-600 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
-              {isMenuOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
+              {isMenuOpen ? (
+                <X className="block h-6 w-6" />
+              ) : (
+                <Menu className="block h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -127,5 +139,5 @@ export function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }

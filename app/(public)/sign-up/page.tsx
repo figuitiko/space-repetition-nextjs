@@ -1,5 +1,9 @@
-import { SignUpPage } from "@/components/sign-up-page"
+import { SignUp } from "@clerk/nextjs";
 
 export default function SignUpRoute() {
-  return <SignUpPage />
+  return (
+    <div className="flex h-screen w-screen items-center justify-center">
+      <SignUp />
+    </div>
+  );
 }

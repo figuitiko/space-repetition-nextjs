@@ -33,9 +33,12 @@ export function LandingPage() {
                 Our scientifically-proven spaced repetition system helps you
                 remember what you learn forever.
               </p>
-              {/* <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/sign-up">
-                  <Button size="lg" className="bg-robins-500 hover:bg-robins-600">
+                  <Button
+                    size="lg"
+                    className="bg-robins-500 hover:bg-robins-600"
+                  >
                     Get Started Free
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -45,7 +48,7 @@ export function LandingPage() {
                     How It Works
                   </Button>
                 </Link>
-              </div> */}
+              </div>
               <div className="mt-8 flex items-center text-sm text-gray-500">
                 <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
                 No credit card required
